@@ -11,16 +11,20 @@ this.addEventListener('install', event => {
 });
 
 this.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
+    if (
+        event.request.mode === 'navigate' ||
+        (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))
+    ) {
         event.respondWith(
             fetch(event.request.url).catch(error => caches.match(offlineUrl))
         );
-    } else {
-        event.respondWith(
-            caches.match(event.request)
-                .then(function (response) {
-                    return response || fetch(event.request);
-                })
-        );
+
+        return;
     }
+    event.respondWith(
+        caches.match(event.request)
+            .then(function (response) {
+                return response || fetch(event.request);
+            })
+    );
 });
