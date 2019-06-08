@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <title>Internet caiu? Não</title>
     <style>
-        p { font-size: 70px; }
+        p {
+            font-size: 170px;
+            font-family: sans-serif;
+        }
         #position {
             position: fixed;
             top: 50%;
@@ -20,9 +23,9 @@
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker
-                .register('sw.js')
+                .register('/sw.js')
                 .then(function() { console.log("Service Worker Registered"); });
-            }
+        }
     </script>
 </body>
 </html>
