@@ -61,12 +61,21 @@
     <div id="position">
         <p>Não</p>
     </div>
+    <!-- Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker
                 .register('/sw.js')
                 .then(function() { console.log("Service Worker Registered"); });
         }
+    </script>
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-9813743296800103",
+              enable_page_level_ads: true
+         });
     </script>
 </body>
 </html>
