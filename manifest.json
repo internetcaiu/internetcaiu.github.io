@@ -1,8 +1,8 @@
 {
  "name": "Internet Caiu?",
  "short_name": "Internet Caiu?",
- "background_color": "#00dc43",
- "theme_color": "#00dc43",
+ "background_color": "#ffffff",
+ "theme_color": "#ffffff",
  "display": "standalone",
  "icons": [
   {
